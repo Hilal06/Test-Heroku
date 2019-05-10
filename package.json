@@ -4,14 +4,18 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot-prod",
+    "deploy": "ng build –prod –base-href='https://Hilal06.github.io/Test-Heroku/' && ngh"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "1.2.4",
+    "@angular/compiler-cli": "^4.0.0",
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
@@ -23,8 +27,10 @@
     "@angular/router": "^4.0.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "express": "^4.16.4",
     "rxjs": "^5.4.1",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "typescript": "~2.3.3"
   },
   "devDependencies": {
     "@angular/cli": "1.2.4",
@@ -46,5 +52,9 @@
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
     "typescript": "~2.3.3"
+  },
+  "engines": {
+    "node": "10.15.1",
+    "npm": "6.4.1"
   }
 }
